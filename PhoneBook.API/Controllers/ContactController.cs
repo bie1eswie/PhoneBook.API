@@ -96,7 +96,7 @@ namespace PhoneBook.API.Controllers
 								}
 								else
 								{
-										return NotFound(new { Successfull = true, Message = "There was a problem updating the contact" });
+										return BadRequest(new { Successfull = true, Message = "There was a problem updating the contact" });
 								}
 						}
 						catch (Exception ex)
