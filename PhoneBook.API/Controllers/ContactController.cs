@@ -140,12 +140,12 @@ namespace PhoneBook.API.Controllers
 						}
 				}
 				[HttpGet("getContacts")]
-				public IActionResult GetContacts()
+				public async Task<IActionResult> GetContacts()
 				{
 						GenericResult _result = new GenericResult();
 						try
 						{
-								var result = _contactService.GetAllContacts();
+								var result = await _contactService.GetAllContacts();
 								if (result != null)
 								{
 										return Ok(new { result });
@@ -168,12 +168,12 @@ namespace PhoneBook.API.Controllers
 						}
 				}
 				[HttpGet("{id}")]
-				public IActionResult Get(int id)
+				public async Task<IActionResult> Get(int id)
 				{
 						GenericResult _result = new GenericResult();
 						try
 						{
-								var result = _contactService.GetContact(id);
+								var result = await _contactService.GetContact(id);
 								if (result != null)
 								{
 										return Ok(new { result });
