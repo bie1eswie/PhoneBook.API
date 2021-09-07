@@ -8,8 +8,11 @@ using System.Threading.Tasks;
 
 namespace PhoneBook.API.Services.Abstract
 {
+		//A lot of the business logic will happen at this point 
 		public class ContactService : IContactService
 		{
+				//I went with a repository design pattern seperate business logic from data access
+				// the service layer does not need to know how or where the data comes from
 				private readonly IPhoneBookRepository _phoneBookRepository ;
 				public ContactService(IPhoneBookRepository phoneBookRepository)
 				{
